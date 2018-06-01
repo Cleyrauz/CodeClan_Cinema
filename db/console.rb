@@ -61,6 +61,8 @@ ticket2 = Ticket.new({
   customer1.delete()
   ticket1.delete()
 
+  customer1.find_films_by_customer()
+
 
   binding.pry
   nil
