@@ -62,6 +62,7 @@ ticket2 = Ticket.new({
   ticket1.delete()
 
   customer1.find_films_by_customer()
+  film2.find_customers_by_films()
 
 
   binding.pry
