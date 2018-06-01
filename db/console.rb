@@ -37,8 +37,6 @@ ticket1 = Ticket.new({
   'film_id' => film1.id
   })
 
-  binding.pry
-
   ticket1.save()
 
 ticket2 = Ticket.new({
@@ -47,3 +45,6 @@ ticket2 = Ticket.new({
   })
 
   ticket2.save()
+
+  binding.pry
+  nil 
