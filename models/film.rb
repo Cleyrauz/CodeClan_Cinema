@@ -1,3 +1,5 @@
+require_relative("../db/sql_runner")
+
 class Film
 
   attr_accessor :title, :price
