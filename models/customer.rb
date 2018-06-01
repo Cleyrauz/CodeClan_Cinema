@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner")
+require_relative('film')
 
 class Customer
 
@@ -8,7 +9,7 @@ attr_reader :id
   def initialize( options )
     @id = options['id'].to_i
     @name = options['name']
-    @funds = options['fund'].to_i
+    @funds = options['funds'].to_i
   end
 
   def save()
@@ -35,6 +36,16 @@ attr_reader :id
    values = [@id]
    films = SqlRunner.run(sql, values)
    return films.map { |film| Film.new(film) }
+ end
+
+ def buy_ticket(film)
+   if @funds >= film.price
+     @funds -= film.price
+     update 
+     return film.price
+   else
+     return "You don't have enough funds"
+   end
  end
 
   def self.all()

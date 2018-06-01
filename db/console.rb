@@ -64,6 +64,7 @@ ticket2 = Ticket.new({
   customer1.find_films_by_customer()
   film2.find_customers_by_films()
 
+  customer2.buy_ticket(film1)
 
   binding.pry
   nil
