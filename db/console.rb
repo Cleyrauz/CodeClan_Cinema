@@ -50,5 +50,8 @@ ticket2 = Ticket.new({
   customer1.name = "Janet"
   customer1.update()
 
+  film2.title = "La la land"
+  film2.update()
+
   binding.pry
   nil
