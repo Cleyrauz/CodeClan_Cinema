@@ -33,6 +33,20 @@ class Ticket
     SqlRunner.run(sql, values)
   end
 
+  def find_tickets_bought_by_customer
+    sql = "SELECT * FROM tickets WHERE customer_id = $1"
+    values = [@customer_id]
+    tickets = SqlRunner.run(sql, values)
+    return tickets.map { |ticket| Ticket.new(ticket) }.length
+  end
+
+  def number_customers_per_film
+  sql = "SELECT * FROM tickets WHERE film_id = $1"
+  values = [@film_id]
+  customers = SqlRunner.run(sql, values)
+  return customers.map { |customer| Customer.new(customer) }.length
+  end
+
   def self.all()
     sql = "SELECT * FROM tickets"
   ticket = SqlRunner.run(sql)

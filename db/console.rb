@@ -57,14 +57,16 @@ ticket2 = Ticket.new({
   film2.title = "La la land"
   film2.update()
 
-  film1.delete()
-  customer1.delete()
-  ticket1.delete()
-
   customer1.find_films_by_customer()
   film2.find_customers_by_films()
 
   customer2.buy_ticket(film1)
 
+  ticket1.find_tickets_bought_by_customer()
+  ticket2.number_customers_per_film()
+
   binding.pry
-  nil
+
+  film1.delete()
+  customer1.delete()
+  ticket1.delete()

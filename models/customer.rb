@@ -41,7 +41,7 @@ attr_reader :id
  def buy_ticket(film)
    if @funds >= film.price
      @funds -= film.price
-     update 
+     update
      return film.price
    else
      return "You don't have enough funds"
