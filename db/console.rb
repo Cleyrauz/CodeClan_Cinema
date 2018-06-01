@@ -46,5 +46,9 @@ ticket2 = Ticket.new({
 
   ticket2.save()
 
+
+  customer1.name = "Janet"
+  customer1.update()
+
   binding.pry
-  nil 
+  nil
