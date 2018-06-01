@@ -4,6 +4,10 @@ require_relative('../models/film')
 
 require('pry-byebug')
 
+Ticket.delete_all()
+Film.delete_all()
+Customer.delete_all()
+
 customer1 = Customer.new({
   'name' => 'Cleyra',
   'funds' => 150
@@ -52,6 +56,11 @@ ticket2 = Ticket.new({
 
   film2.title = "La la land"
   film2.update()
+
+  film1.delete()
+  customer1.delete()
+  ticket1.delete()
+
 
   binding.pry
   nil
