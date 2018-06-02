@@ -1,6 +1,7 @@
 require_relative('../models/ticket')
 require_relative('../models/customer')
 require_relative('../models/film')
+require_relative('../models/screen')
 
 require('pry-byebug')
 
@@ -56,6 +57,12 @@ ticket2 = Ticket.new({
 
   film2.title = "La la land"
   film2.update()
+
+  screen = Screen.new({
+    'film_id' => film1.id,
+    'time_film' => "December 31, 20:15"
+    })
+  screen.save()
 
   customer1.find_films_by_customer()
   film2.find_customers_by_films()
