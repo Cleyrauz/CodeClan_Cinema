@@ -1,5 +1,6 @@
 require_relative("../db/sql_runner")
 require_relative('film')
+require_relative('ticket')
 
 class Screen
 
@@ -17,6 +18,11 @@ class Screen
     values = [@film_id, @time_film]
     screen = SqlRunner.run(sql, values).first
     @id = screen['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM screenings"
+    SqlRunner.run(sql)
   end
 
 end
